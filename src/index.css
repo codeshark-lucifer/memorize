@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+.card {
+    @apply flex justify-center items-center rounded-2xl;
+    perspective: 1000px;
+}
+
+.card-inner {
+    @apply relative w-full h-full transition-transform duration-500;
+    transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    @apply absolute w-full h-full backface-hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card-front {
+    @apply bg-yellow-300 ;
+}
+
+.card-back {
+    @apply bg-yellow-100 ;
+}
+
+.active .card-back {
+    @apply bg-green-300 ;
+}
