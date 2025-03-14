@@ -92,7 +92,7 @@ const App = () => {
                     <input type="range" value={size} name="size" onChange={e => setSize(e.target.value)} min="2" max="10" step="2" />
 
                 </div>
-                <button className='bg-slate-700 px-4 py-2 rounded-md cursor-pointer hover:bg-slate-600 ' onClick={() => setSize(2)}>
+                <button className='bg-slate-700 px-4 py-2 rounded-md cursor-pointer hover:bg-slate-600 ' onClick={() => {setSize(2) ; clearBoard() ; setData(data.sort(() => Math.random() - 0.5))} }>
                     RESET
                 </button>
             </div>
